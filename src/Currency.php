@@ -6,7 +6,7 @@ namespace App;
 
 class Currency
 {
-    private  string $isoCode;
+    private string $isoCode;
 
     public function __construct(string $isoCode)
     {
@@ -24,7 +24,7 @@ class Currency
 
         $key = array_search($isoCode, $currencies);
 
-        if(!$key) {
+        if (!$key) {
             exit('ERROR: Нет такой валюты');
         }
         $this->isoCode = $isoCode;
@@ -35,8 +35,8 @@ class Currency
         return $this->isoCode;
     }
 
-    public function equals($isoCode):bool
+    public function equals($isoCode): bool
     {
-        return $this->getisoCode () == $isoCode->getisoCode ();
+        return $this->getisoCode() == $isoCode->getisoCode();
     }
 }

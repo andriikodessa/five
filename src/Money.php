@@ -45,19 +45,16 @@ class Money
         return $this->currency->getIsoCode() == $money->currency->getIsoCode();
     }
 
-    public function equals($money):bool
+    public function equals($money): bool
     {
         return $this->checCurrency($money) && $this->currency == $money->currency;
     }
 
-    public function add (Money $money):Money
+    public function add(Money $money): Money
     {
-        if($this->checCurrency($money))
-        {
-            return Money::init($this->amount + $money->amount, $this->currency->getIsoCode());
+        if ($this->checCurrency($money)) {
+            exit('ERROR!!!');
         }
-
-        echo "ERROR!!!";
+        return Money::init($this->amount + $money->amount, $this->currency->getIsoCode());
     }
 }
-
